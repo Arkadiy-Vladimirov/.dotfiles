@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+# Except for
+!.gitignore
+
+# neovim dotfiles
+!nvim
+!nvim/**
+
+# tmux dotfiles
+!tmux
+!tmux/**
