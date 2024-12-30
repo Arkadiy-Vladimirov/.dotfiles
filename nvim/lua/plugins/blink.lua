@@ -14,7 +14,7 @@
 			preset = 'default',
 			['<C-k>'] = { 'select_prev', 'fallback' },
 			['<C-j>'] = { 'select_next', 'fallback' },
-			['<Tab>'] = { 'select_and_accept', 'fallback' },
+			['<C-n>'] = { 'select_and_accept', 'fallback' },
 		},
  		appearance = {
  			-- Sets the fallback highlight groups to nvim-cmp's highlight groups
