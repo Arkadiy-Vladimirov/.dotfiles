@@ -4,10 +4,12 @@
 # Except for
 !.gitignore
 
-# neovim dotfiles
+# Neovim dotfiles
 !nvim
 !nvim/**
+# Ignore lock-file indeed
+nvim/lazy-lock.json
 
-# tmux dotfiles
+# Tmux dotfiles
 !tmux
 !tmux/**
