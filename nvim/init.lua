@@ -2,7 +2,6 @@ require("options")
 require("remaps")
 require("lazy-setup")
 
-vim.cmd("colorscheme rose-pine")
 
 -- LspAttach is where you enable features that only work
 -- if there is a language server active in the file
