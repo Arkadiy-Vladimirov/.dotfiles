@@ -23,7 +23,8 @@ return {
 		require('mason-lspconfig').setup({
 			-- list of language servers to be installed either way
     		ensure_installed = {
-				"lua_ls"
+				"lua_ls",
+				"pylsp"
 			},
 			-- handlers are called whenever a server is ready to be set up.
         	handlers = {
