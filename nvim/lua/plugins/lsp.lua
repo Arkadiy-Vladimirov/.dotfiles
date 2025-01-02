@@ -3,7 +3,7 @@ return {
     dependencies = {
       {'williamboman/mason.nvim'},
       {'williamboman/mason-lspconfig.nvim'},
-	  {'saghen/blink.cmp'},
+	  {'hrsh7th/cmp-nvim-lsp'}, -- or {'saghen/blink.cmp'},
     },
     init = function()
     	-- Reserve a space in the gutter
@@ -11,12 +11,11 @@ return {
       	vim.opt.signcolumn = 'yes'
     end,
     config = function()
-		-- get blink capabilities
-		local blink = require('blink.cmp')
+        local cmp_lsp = require("cmp_nvim_lsp") -- or local blink = require('blink.cmp')
 		local capabilities = vim.tbl_deep_extend(
 			'force', {},
 			vim.lsp.protocol.make_client_capabilities(),
-			blink.get_lsp_capabilities()
+			cmp_lsp.default_capabilities() -- or blink.get_lsp_capabilities()
 		)
 		-- see :help mason-lspconfig-quickstart to get how to do that properly
 		require('mason').setup()
@@ -26,6 +25,8 @@ return {
 				"lua_ls",
 				"pylsp"
 			},
+			-- enable auto-install
+			automatic_installation = true,
 			-- handlers are called whenever a server is ready to be set up.
         	handlers = {
         		-- this is the "default handler"
@@ -54,5 +55,21 @@ return {
            		end,
 			}
     	})
+		-- LspAttach is where you enable features that only work
+		-- if there is a language server active in the file
+		vim.api.nvim_create_autocmd('LspAttach', {
+			desc = 'LSP actions',
+			callback = function(event)
+				local opts = {buffer = event.buf}
+
+				vim.keymap.set('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+				vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+				vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+				vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+				vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+				vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+				vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+			end,
+		})
     end
 }
