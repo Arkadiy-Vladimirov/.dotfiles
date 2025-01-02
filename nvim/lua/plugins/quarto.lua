@@ -20,7 +20,7 @@ return {
 		vim.keymap.set("n", "<leader>rc", runner.run_cell,  { desc = "run cell", 			silent = true })
 		vim.keymap.set("n", "<leader>ra", runner.run_above, { desc = "run cell and above", 	silent = true })
 		vim.keymap.set("n", "<leader>rb", runner.run_below, { desc = "run cell and above", 	silent = true })
-		vim.keymap.set("n", "<leader>R", runner.run_all,   	{ desc = "run all cells", 		silent = true })
+		vim.keymap.set("n", "<leader>R",  runner.run_all, 	{ desc = "run all cells", 		silent = true })
 		-- doesn't work for some reason. do a direct call to molten instead (see molten.lua)
 		-- vim.keymap.set("v", "<leader>r",  runner.run_range, { desc = "run visual range", 	silent = true })
 	end
