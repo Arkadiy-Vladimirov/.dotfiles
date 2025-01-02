@@ -12,9 +12,10 @@
  		-- See the full "keymap" documentation for information on defining your own keymap.
  		keymap = {
 			preset = 'default',
+			['<C-Tab>'] = { 'show', 'show_documentation', 'hide_documentation' },
+			['<C-space>'] = { 'select_and_accept', 'fallback' },
 			['<C-k>'] = { 'select_prev', 'fallback' },
 			['<C-j>'] = { 'select_next', 'fallback' },
-			['<C-n>'] = { 'select_and_accept', 'fallback' },
 		},
  		appearance = {
  			-- Sets the fallback highlight groups to nvim-cmp's highlight groups
@@ -25,6 +26,13 @@
  			-- Adjusts spacing to ensure icons are aligned
  			nerd_font_variant = 'mono'
  		},
+		completion = {
+			documentation = {
+				--Tthe documentation window will show automatically
+  				auto_show = true,
+			},
+		},
+		-- Experimental signature help support
 		signature = { enabled = true },
  		-- Default list of enabled providers defined so that you can extend it
  		-- elsewhere in your config, without redefining it, due to `opts_extend`
