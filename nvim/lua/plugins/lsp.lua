@@ -5,11 +5,6 @@ return {
       {'williamboman/mason-lspconfig.nvim'},
 	  {'hrsh7th/cmp-nvim-lsp'}, -- or {'saghen/blink.cmp'},
     },
-    init = function()
-    	-- Reserve a space in the gutter
-    	-- This will avoid an annoying layout shift in the screen
-      	vim.opt.signcolumn = 'yes'
-    end,
     config = function()
         local cmp_lsp = require("cmp_nvim_lsp") -- or local blink = require('blink.cmp')
 		local capabilities = vim.tbl_deep_extend(
@@ -69,7 +64,12 @@ return {
 				vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
 				vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
 				vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+				vim.keymap.set("n", "<leader>d", function() vim.diagnostic.open_float() end, opts)
 			end,
+		})
+		vim.diagnostic.config({
+			virtual_text = false,
+			underline = false,
 		})
     end
 }
