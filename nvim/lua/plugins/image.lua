@@ -1,6 +1,6 @@
 return {
 	'3rd/image.nvim',
-    enabled = true,
+    enabled = false,
     dev = false,
 	build = false, -- false when using magick_cli backend, true when for magick_rock
     ft = { 'markdown', 'quarto', 'vimwiki' },

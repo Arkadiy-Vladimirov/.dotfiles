@@ -1,6 +1,7 @@
 return {
 	-- Requires Python>=3.10
 	'benlubas/molten-nvim',
+	enabled = false,
 	-- Don't forget to run this command manually after installation and each update
 	build = ':UpdateRemotePlugins',
 	init = function()
