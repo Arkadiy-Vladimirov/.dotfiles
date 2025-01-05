@@ -15,12 +15,14 @@ return {
 		vim.g.molten_virt_lines_off_by_1 = true
 	end,
 	config = function()
-		vim.keymap.set("n", "<leader>mi", ":MoltenInit<CR>", 					{ desc = "[i]nitialize kernel", 	silent = true })
-		vim.keymap.set("n", "<leader>me", ":MoltenEvaluateOperator<CR>", 		{ desc = "[e]valuate operator", 	silent = true })
-		vim.keymap.set("n", "<leader>mo", ":noautocmd MoltenEnterOutput<CR>", 	{ desc = "[o]pen output window", 	silent = true })
-		vim.keymap.set("n", "<leader>mr", ":MoltenReevaluateCell<CR>", 			{ desc = "[r]e-eval cell", 			silent = true })
-		vim.keymap.set("v", "<leader>r",  ":<C-u>MoltenEvaluateVisual<CR>gv", 	{ desc = "[r]un visual selection", 	silent = true })
-		vim.keymap.set("n", "<leader>mh", ":MoltenHideOutput<CR>", 				{ desc = "[h]ide output window", 	silent = true })
-		vim.keymap.set("n", "<leader>md", ":MoltenDelete<CR>", 					{ desc = "[d]elete Molten cell", 	silent = true })
+		vim.keymap.set("n", "<leader>mi", ":MoltenInit<CR>", 					{ desc = "[m]olten [i]nit kernel", 	silent = true })
+		vim.keymap.set("n", "<leader>mh", ":MoltenInterrupt<CR>", 				{ desc = "[m]olten [h]alt kernel", 	silent = true })
+		vim.keymap.set("n", "<leader>mr", ":MoltenRestart<CR>", 				{ desc = "[m]olten [r]estart kernel", 	silent = true })
+		-- vim.keymap.set("n", "<leader>me", ":MoltenEvaluateOperator<CR>", 		{ desc = "[e]valuate operator", 	silent = true })
+		-- vim.keymap.set("n", "<leader>mo", ":noautocmd MoltenEnterOutput<CR>", 	{ desc = "[o]pen output window", 	silent = true })
+		-- vim.keymap.set("n", "<leader>mr", ":MoltenReevaluateCell<CR>", 			{ desc = "[r]e-eval cell", 			silent = true })
+		vim.keymap.set("v", "<leader>mr",  ":<C-u>MoltenEvaluateVisual<CR>gv", 	{ desc = "[m]olten [r]un visual", 	silent = true })
+		-- vim.keymap.set("n", "<leader>mh", ":MoltenHideOutput<CR>", 				{ desc = "[h]ide output window", 	silent = true })
+		-- vim.keymap.set("n", "<leader>md", ":MoltenDelete<CR>", 					{ desc = "[d]elete Molten cell", 	silent = true })
 	end,
 }
