@@ -14,4 +14,4 @@ vim.opt.scrolloff = 8
 -- reserve a space in the gutter to avoid layout shift in the screen
 vim.opt.signcolumn = "yes"
 -- color char limit
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80,100"
