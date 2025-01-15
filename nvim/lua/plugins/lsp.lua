@@ -56,7 +56,11 @@ return {
 						settings = {
 							basedpyright = {
 								analysis = {
-									typeCheckingMode = 'off'
+									typeCheckingMode = 'off',
+									diagnosticSeverityOverrides = {
+										-- disable unused import error not to duplicate ruff
+										reportUnusedImport = "none",
+									}
 								}
 							}
 						},
