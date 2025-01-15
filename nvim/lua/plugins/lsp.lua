@@ -18,7 +18,8 @@ return {
 			-- list of language servers to be installed either way
     		ensure_installed = {
 				"lua_ls",
-				"pylsp"
+				"basedpyright",
+				"ruff"
 			},
 			-- enable auto-install
 			automatic_installation = true,
@@ -48,8 +49,21 @@ return {
                    		},
                		}
            		end,
+				-- pyright config
+				["basedpyright"] = function ()
+					local lspconfig = require("lspconfig")
+					lspconfig.basedpyright.setup {
+						settings = {
+							basedpyright = {
+								analysis = {
+									typeCheckingMode = 'off'
+								}
+							}
+						},
+					}
+				end,
 			}
-    	})
+		})
 		-- LspAttach is where you enable features that only work
 		-- if there is a language server active in the file
 		vim.api.nvim_create_autocmd('LspAttach', {
