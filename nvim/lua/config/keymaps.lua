@@ -1,4 +1,7 @@
+-- set leader
 vim.g.mapleader = " "
+
+-- go to netrw
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- move selected

@@ -9,7 +9,6 @@ return {
 
 		harpoon:setup()
 
-		vim.keymap.set("n", "<leader>A", function() harpoon:list():prepend() end)
 		vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 		vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
@@ -17,6 +16,7 @@ return {
 		vim.keymap.set({"n","t"}, "<C-j>", function() harpoon:list():select(2) end)
 		vim.keymap.set({"n","t"}, "<C-k>", function() harpoon:list():select(3) end)
 		vim.keymap.set({"n","t"}, "<C-l>", function() harpoon:list():select(4) end)
+
 		vim.keymap.set("n", "<leader><C-h>", function() harpoon:list():replace_at(1) end)
 		vim.keymap.set("n", "<leader><C-j>", function() harpoon:list():replace_at(2) end)
 		vim.keymap.set("n", "<leader><C-k>", function() harpoon:list():replace_at(3) end)

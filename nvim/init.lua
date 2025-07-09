@@ -1,3 +1,5 @@
-require("options")
-require("remaps")
-require("lazy-setup")
+require("config.options")
+require("config.keymaps")
+require("core.lazy")
+require("core.lsp")
+require("config.autocmds")
