@@ -9,13 +9,18 @@
 		-- See the full "keymap" documentation for information on defining your own keymap.
 		keymap = {
 			preset = 'default',
-			-- ['<C-Tab>'] = { 'show', 'show_documentation', 'hide_documentation' },
-			['<Tab>'] = { 'select_and_accept', 'fallback' },
-			-- ['<C-space>'] = { 'select_and_accept', 'fallback' },
+			['<S-Tab>'] = {'accept'},
 			['<C-j>'] = { 'select_next', 'fallback' },
 			['<C-k>'] = { 'select_prev', 'fallback' },
 			['<C-h>'] = { 'scroll_documentation_up', 'fallback' },
 			['<C-l>'] = { 'scroll_documentation_down', 'fallback' },
+		},
+		cmdline = {
+			keymap = {
+				preset = 'inherit',
+				['<CR>'] = { 'accept_and_enter', 'fallback' },
+			},
+			completion = { menu = { auto_show = true } },
 		},
 		appearance = {
 			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
