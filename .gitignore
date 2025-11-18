@@ -13,3 +13,7 @@ nvim/lazy-lock.json
 # Tmux dotfiles
 !tmux
 !tmux/**
+
+# Fish config
+!fish
+!fish/config.fish
