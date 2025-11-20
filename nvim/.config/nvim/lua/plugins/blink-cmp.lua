@@ -10,6 +10,7 @@
 		keymap = {
 			preset = 'default',
 			['<S-Tab>'] = {'accept'},
+			['<C-e>'] = {'accept'},
 			['<C-j>'] = { 'select_next', 'fallback' },
 			['<C-k>'] = { 'select_prev', 'fallback' },
 			['<C-h>'] = { 'scroll_documentation_up', 'fallback' },

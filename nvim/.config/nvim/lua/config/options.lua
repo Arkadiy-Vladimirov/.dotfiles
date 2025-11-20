@@ -13,3 +13,6 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 -- color char limit
 vim.opt.colorcolumn = "80,100"
+
+-- sync with system clipboard
+vim.opt.clipboard = "unnamedplus"

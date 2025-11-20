@@ -3,15 +3,38 @@ return {
  	-- Automatically update parsers on install
  	build = ":TSUpdate",
 
+	-- tell lazy which module to call `setup` on
+	main = "nvim-treesitter.configs",
+
 	opts = {
  		-- Llist of parsers ensured to be installed
 		ensure_installed = {
+		-- vim
 			"vim",
 			"vimdoc",
+		-- programming languages
 			"c",
-			"c++",
+			"cpp",
 			"lua",
-			"python"
+			"python",
+		-- mark-up
+			"csv",
+			"json",
+			"toml",
+			"yaml",
+			"markdown",
+		-- scripting
+			"bash",
+			"fish",
+			"ssh_config",
+			"make",
+			"cmake",
+		-- git
+			"git_config",
+			"git_rebase",
+			"gitattributes",
+			"gitcommit",
+			"gitignore",
 		},
 		 -- Install parsers synchronously (only applied to `ensure_installed`)
 		sync_install = false,
@@ -27,7 +50,7 @@ return {
 
 		-- Enable Syntax Tree based highligting
 		highlight = {
-			indent = true,
+			enable = true,
 		},
 	}
 }
