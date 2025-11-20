@@ -17,7 +17,9 @@ brew update
 brew install stow tmux fish neovim
 
 # lsp servers for nvim
+brew install lua-language-server
 brew install basedpyright
+brew install ruff
 
 # stow things
 stow tmux
