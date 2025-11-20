@@ -29,6 +29,7 @@ return {
 			"ssh_config",
 			"make",
 			"cmake",
+			"dockerfile",
 		-- git
 			"git_config",
 			"git_rebase",
