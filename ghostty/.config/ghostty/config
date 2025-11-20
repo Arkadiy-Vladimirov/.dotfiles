@@ -32,6 +32,11 @@ keybind = cmd+x=text:\x18
 keybind = cmd+y=text:\x19
 keybind = cmd+z=text:\x1A
 
+# Map Ctrl+c (Cmd+c) for copy
+keybind = performable:ctrl+c=copy_to_clipboard
+# Map Ctrl+v (Cmd+v) for paste
+keybind = performable:ctrl+v=paste_from_selection
+
 # For ghostty to install the terminfo on remote machine entry first
 # and use the fallback if installation failed.
 shell-integration-features = ssh-terminfo,ssh-env
