@@ -7,8 +7,6 @@
 # Neovim dotfiles
 !nvim
 !nvim/**
-# Ignore lock-file indeed
-nvim/lazy-lock.json
 
 # Tmux dotfiles
 !tmux
@@ -16,4 +14,4 @@ nvim/lazy-lock.json
 
 # Fish config
 !fish
-!fish/config.fish
+!fish/**
