@@ -3,6 +3,10 @@
 background = 282c34
 foreground = ffffff
 
+# For ghostty to install the terminfo on remote machine entry first
+# and use the fallback if installation failed.
+shell-integration-features = ssh-terminfo,ssh-env
+
 # Map Cmd+<char> to send Ctrl+<char>
 #
 keybind = cmd+a=text:\x01
@@ -26,17 +30,10 @@ keybind = cmd+r=text:\x12
 keybind = cmd+s=text:\x13
 keybind = cmd+t=text:\x14
 keybind = cmd+u=text:\x15
-keybind = cmd+v=text:\x16
+# leave paste from clipboard as it is.
+# keybind = cmd+v=text:\x16
 keybind = cmd+w=text:\x17
 keybind = cmd+x=text:\x18
 keybind = cmd+y=text:\x19
 keybind = cmd+z=text:\x1A
 
-# Map Ctrl+c (Cmd+c) for copy
-keybind = performable:ctrl+c=copy_to_clipboard
-# Map Ctrl+v (Cmd+v) for paste
-keybind = performable:ctrl+v=paste_from_selection
-
-# For ghostty to install the terminfo on remote machine entry first
-# and use the fallback if installation failed.
-shell-integration-features = ssh-terminfo,ssh-env
