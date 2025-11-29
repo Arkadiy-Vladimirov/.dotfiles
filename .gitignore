@@ -4,6 +4,9 @@
 # Except for
 !.gitignore
 
+# Install script
+!install.sh
+
 # Neovim dotfiles
 !nvim
 !nvim/**
@@ -32,3 +35,7 @@ nvim/.config/nvim/lazy-lock.json
 
 # Brewfile
 !Brewfile
+
+# Ghostty config
+!ghostty
+!ghostty/**

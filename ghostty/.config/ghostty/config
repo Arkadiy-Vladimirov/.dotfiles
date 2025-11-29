@@ -1,11 +1,9 @@
-# The syntax is "key = value". The whitespace around the
-# equals doesn't matter.
-background = 282c34
-foreground = ffffff
+# Color Theme
+theme = Rose Pine
 
-# For ghostty to install the terminfo on remote machine entry first
-# and use the fallback if installation failed.
+# Transparent background
+background-opacity = 0.9
+background-blur = true
+
+# Install the terminfo on remote machine
 shell-integration-features = ssh-terminfo,ssh-env
-
-# Note:
-# Better change your keyboard cmd modifier to behave as ctrl and vice versa.
