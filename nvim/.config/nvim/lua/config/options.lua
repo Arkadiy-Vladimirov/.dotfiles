@@ -16,3 +16,5 @@ vim.opt.colorcolumn = "80,100"
 
 -- sync with system clipboard
 vim.opt.clipboard = "unnamedplus"
+-- force neovim to use OSC52 clipboard provider
+vim.g.clipboard = 'osc52'
