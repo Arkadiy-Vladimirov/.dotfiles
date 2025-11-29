@@ -1,3 +1,9 @@
 return {
-	-- no extra opts
+	settings = {
+		basedpyright = {
+			analysis = {
+				typeCheckingMode = "basic",
+			}
+		}
+	}
 }
