@@ -21,7 +21,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 
 # install things
-brew install stow tmux fish neovim
+brew install stow tmux tpm fish neovim
 
 # language servers for nvim
 brew install lua-language-server
