@@ -27,8 +27,11 @@ export PATH
 EOF
 fi
 
-# add Homebrew to PATH of this local shell (executing this script)
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# set BREW path for this local shell (executing this script)
+export BREW=/home/linuxbrew/.linuxbrew
+
+# add Homebrew to PATH of this shell
+eval "$(${BREW}/bin/brew shellenv)"
 
 # sync required things
 brew bundle
