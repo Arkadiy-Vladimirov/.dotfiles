@@ -25,8 +25,6 @@ PATH="$PATH:$BREW_ROOT/bin:$BREW_ROOT/sbin"
 export PATH
 # <<< homebrew init (dotfiles) <<<
 EOF
-	# update Homebrew
-	brew update
 fi
 
 # add Homebrew to PATH of this local shell (executing this script)
