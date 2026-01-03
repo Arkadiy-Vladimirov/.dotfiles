@@ -14,13 +14,16 @@ if ! grep -Fxq "$brew_init_line" "$HOME/.zprofile"; then
 	echo "$brew_init_line" >> "$HOME/.zprofile"
 fi
 
-# add Homebrew to PATH of this local shell (executing this script)
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# set BREW path for this local shell (executing this script)
+export BREW=/opt/homebrew/
+
+# add Homebrew to PATH of this shell
+eval "$(${BREW}/bin/brew shellenv)"
 
 # sync required things
 brew bundle
 
-# stow things (run inside .dotfiles folder)
+# stow things
 stow fish tmux nvim ghostty
 
 # install tpm plugins
