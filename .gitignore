@@ -4,8 +4,8 @@
 # Except for
 !.gitignore
 
-# Install script
-!install.sh
+# Sync script
+!sync.sh
 
 # Neovim dotfiles
 !nvim
