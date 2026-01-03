@@ -23,6 +23,9 @@ brew bundle
 # stow things (run inside .dotfiles folder)
 stow fish tmux nvim ghostty
 
+# install tpm plugins
+$BREW/opt/tpm/share/tpm/bin/install_plugins
+
 # set up fish (idempotent)
 fish_path="$(command -v fish)"
 
