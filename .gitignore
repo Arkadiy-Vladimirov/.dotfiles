@@ -29,3 +29,6 @@ nvim/.config/nvim/lazy-lock.json
 !fish/.config/fish/
 !fish/.config/fish/config/
 !fish/.config/fish/config/config.fish
+
+# Brewfile
+!Brewfile
