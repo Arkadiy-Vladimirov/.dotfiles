@@ -36,6 +36,9 @@ brew bundle
 # stow things
 stow fish tmux nvim
 
+# install tpm plugins
+$BREW/opt/tpm/share/tpm/bin/install_plugins
+
 # set up fish auto-start (idempotent)
 fish_marker="# ---- auto-start fish (added by dotfiles install) ----"
 
