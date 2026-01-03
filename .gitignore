@@ -4,6 +4,9 @@
 # Except for
 !.gitignore
 
+# Sync script
+!sync.sh
+
 # Neovim dotfiles
 !nvim
 !nvim/**
