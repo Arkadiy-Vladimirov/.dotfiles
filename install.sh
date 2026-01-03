@@ -31,6 +31,9 @@ brew install ruff
 # rg for telescope.nvim
 brew install ripgrep
 
+# tree-sitter cli for parsers auto-install
+brew install tree-sitter-cli
+
 # stow things (run inside .dotfiles folder)
 stow tmux
 stow fish
