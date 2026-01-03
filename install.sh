@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# install Homebrew (Linuxbrew)
-NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# set up Homebrew init + PATH fix in .bashrc for future shells (idempotent)
+# set up fresh Homebrew (Linuxbrew) (idempotent)
 brew_marker="# >>> homebrew init (dotfiles) >>>"
 
 if ! grep -Fq "$brew_marker" "$HOME/.bashrc" 2>/dev/null; then
-  cat << 'EOF' >> "$HOME/.bashrc"
+	# install Homebrew
+	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	# set up Homebrew init + PATH fix in .bashrc for future shells
+	cat << 'EOF' >> "$HOME/.bashrc"
 
 # >>> homebrew init (dotfiles) >>>
 BREW_ROOT="/home/linuxbrew/.linuxbrew"
@@ -25,29 +25,18 @@ PATH="$PATH:$BREW_ROOT/bin:$BREW_ROOT/sbin"
 export PATH
 # <<< homebrew init (dotfiles) <<<
 EOF
+	# update Homebrew
+	brew update
 fi
 
 # add Homebrew to PATH of this local shell (executing this script)
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# update brew
-brew update
-
-# install things
-brew install stow tmux tpm fish neovim
-
-# language servers for nvim
-brew install lua-language-server
-brew install basedpyright
-brew install ruff
-
-# rg for telescope.nvim
-brew install ripgrep
+# sync required things
+brew bundle
 
 # stow things
-stow tmux
-stow fish
-stow nvim
+stow fish tmux nvim
 
 # set up fish auto-start (idempotent)
 fish_marker="# ---- auto-start fish (added by dotfiles install) ----"
